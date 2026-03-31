@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FortuneGlobal E-Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: yellow;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background: white;
+            width: 220px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 6px gray;
+        }
+
+        .product img {
+            width: 150px;
+            height: auto;
+        }
+
+        .rating span {
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function rate() {
+            alert("Thanks for rating!");
+        }
+
+        function addCart(item, price) {
+            alert(item + " added to cart at ₦" + price.toLocaleString());
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="cars.html">Cars</a>
+        <a href="fashion.html">Fashion</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h2>Electronic Products</h2>
+
+    <div class="products">
+        <div class="product">
+            <img src="Lontor 6 Inches Rechargeable Table Fan CTL-MF037-6.jpg" alt="Lontor Fan">
+            <h3>Lontor 6 Inches Rechargeable Table Fan</h3>
+            <p>₦20,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Lontor 6\" Rechargeable Table Fan", 20000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Maxi 20 Litres Manual Microwave Oven.jpg" alt="Maxi Microwave">
+            <h3>Maxi 20 Litres Manual Microwave Oven</h3>
+            <p>₦200,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Maxi 20 Litres Manual Microwave Oven", 200000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Hansen 18 inches Industrial Level Standing Fan.jpg" alt="Hansen Fan">
+            <h3>Hansen 18 inches Industrial Level Standing Fan</h3>
+            <p>₦89,500</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Hansen 18 inches Industrial Level Standing Fan", 89500)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="laptopnew.jpg" alt="HP Laptop">
+            <h3>HP Laptop</h3>
+            <p>₦700,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("HP Laptop", 700000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Binatone 1.5 Litres (BLG) Blender With Grinder.jpg" alt="Binatone Blender">
+            <h3>Binatone 1.5 Litres Blender With Grinder</h3>
+            <p>₦120,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Binatone 1.5 Litres Blender With Grinder", 120000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="AC.jpg" alt="Air Conditioner">
+            <h3>Binatone Air Conditioner</h3>
+            <p>₦300,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Binatone Air Conditioner", 300000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="treadmill.PNG" alt="Treadmill">
+            <h3>Treadmill</h3>
+            <p>₦950,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Treadmill", 950000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="freezer.jpg" alt="Nexus Freezer">
+            <h3>Nexus Deep Freezer</h3>
+            <p>₦850,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Nexus Deep Freezer", 850000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="printer2.jpg" alt="Brother Printer">
+            <h3>Brother 4 in 1 Printer</h3>
+            <p>₦550,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Brother 4 in 1 Printer", 550000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="tv_new.jpg" alt="Hisense TV">
+            <h3>35&quot; Hisense Led Television</h3>
+            <p>₦900,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("35\" Hisense Led Television", 900000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="tv image.jpg" alt="Curve LED TV">
+            <h3>Curve LED Television</h3>
+            <p>₦1,300,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("Curve LED Television", 1300000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="S24 ULTRA CELL PHONES.jpg" alt="S24 Ultra Phone">
+            <h3>S24 ULTRA CELL PHONES</h3>
+            <p>₦250,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("S24 ULTRA CELL PHONES", 250000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="XIAOMI REDMI A5, 6.88 3GB RAM,64GB ROM,BLACK.jpg" alt="Xiaomi Phone">
+            <h3>XIAOMI REDMI A5, 6.88&quot; 3GB RAM, 64GB ROM, BLACK</h3>
+            <p>₦300,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("XIAOMI REDMI A5, 6.88 3GB RAM,64GB ROM,BLACK", 300000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="New Age PowerBank 20000mhA.jpg" alt="PowerBank 20000mAh">
+            <h3>New Age PowerBank</h3>
+            <p>₦30,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("New Age PowerBank 20000mAh", 30000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="POWER BANK3_NEW.jpg" alt="PowerBank 350000mAh">
+            <h3>New Age PowerBank 350000mAh</h3>
+            <p>₦55,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("New Age PowerBank 350000mAh", 55000)'>Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="HP Deskjet Printer.jpg" alt="HP Deskjet Printer">
+            <h3>HP Deskjet Printer</h3>
+            <p>₦150,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span><span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick='addCart("HP Deskjet Printer", 150000)'>Add to Cart</button>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+<center>
+    <footer>
+        <p>© March 2026 FortuneGlobal E-Hub Website. All rights reserved.</p>
+    </footer>
+</center>
+</body>
+
+</html>
