@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FortuneGlobal E-Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: blue;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Clickable logo on the right */
+        .logo {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: pointer;
+        }
+
+        nav {
+            background: #333;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .search {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            width: 220px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 6px gray;
+        }
+
+        .product img {
+            width: 150px;
+        }
+
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #1e7e34;
+        }
+
+        /* Cart fixed at top-right */
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background: red;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            z-index: 1001;
+        }
+
+        /* Login box fixed under cart */
+        #loginBox {
+            position: fixed;
+            top: 60px; /* Below cart */
+            right: 20px;
+            width: 250px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px gray;
+            z-index: 1000;
+        }
+
+        .checkout {
+            background: white;
+            width: 320px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px gray;
+        }
+
+        .rating span {
+            cursor: pointer;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        let cartItems = [];
+        let total = 0;
+
+        /* CART SYSTEM */
+        function addCart(name, price) {
+            cartItems.push({ name, price });
+            total += price;
+            displayCart();
+        }
+
+        function displayCart() {
+            let list = "";
+            let count = cartItems.length;
+            for (let i = 0; i < cartItems.length; i++) {
+                list += cartItems[i].name +
+                    " - ₦" + cartItems[i].price +
+                    " <button onclick='removeItem(" + i + ")'>Remove</button><br>";
+            }
+            document.getElementById("cartItems").innerHTML = list;
+            document.getElementById("cart").innerHTML =
+                "Cart: " + count + " | ₦" + total;
+        }
+
+        function removeItem(index) {
+            total -= cartItems[index].price;
+            cartItems.splice(index, 1);
+            displayCart();
+        }
+
+        /* SEARCH SYSTEM */
+        function searchProduct() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let products = document.getElementsByClassName("product");
+            for (let i = 0; i < products.length; i++) {
+                let name = products[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+                if (name.includes(input)) {
+                    products[i].style.display = "block";
+                } else {
+                    products[i].style.display = "none";
+                }
+            }
+        }
+
+        /* IMAGE SLIDER */
+        let images = ["2017 DIRECT TOKS MERCEDES-BENZ GLE350 4MATIC_46.JPG","PLAY STATION2.jpg", "SNEAKERS3.jpg", "Mountain Bike Bicycle.jpg","LED Digital Watch Mens Black Plated Wrist Watches.jpg","freezer.JPG","Wedding Ring Set Diamond For Couple - Black.jpg","12 Pairs Women's High Jewelry Set Stud Earrings Fashion Diamond Pearls.jpg","BINBOND Men's Quartz Steel Band Watch With Waterproof Night Light And Anti Drop Glass Watch-silver.jpg", "redbeat Kids Android Tablet 7 Inch, Quad Core, 6GB(2+4)RAM+32GB ROM+SD 512GB, Parental Controls, 3G Calling Tablet.jpg","2025 Womens Casual Shoes High Heels - Gold.jpg","4 In 1 Plain Roundneck UNISEX T-Shirts.jpg","gas cooker_17.jpg"];
+        let i = -1;
+
+        function slider() {
+            i++;
+            if (i >= images.length) {
+                i = 0;
+            }
+            document.getElementById("slide").src = images[i];
+        }
+
+        setInterval(slider, 3000);
+
+        /* LOGIN SYSTEM */
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            if (user == "admin" && pass == "1234") {
+                alert("Login Successful!");
+            } else {
+                alert("Wrong Username or Password");
+            }
+        }
+
+        /* STAR RATING */
+        function rate() {
+            alert("Thanks for rating this product!");
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <!-- Clickable logo to go to homepage -->
+        <a href="index.html">
+            <img src="fortuneglobal-ehub.png" class="logo" width="300">
+        </a>
+        <h1>FortuneGlobal E-Hub</h1>
+        <p>Your One-Stop Online Marketplace</p>
+    </header>
+
+    <!-- Cart -->
+    <div class="cart" id="cart">Cart: 0</div>
+
+    <!-- Login box under cart -->
+    <div class="login" id="loginBox">
+        <h3>Login</h3>
+        <input type="text" id="username" placeholder="Username"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="cars.html">Cars</a>
+        <a href="Fashion.html">Fashions</a>
+        <a href="Games.html">Games</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <!-- SLIDER -->
+    <div class="slider">
+        <img id="slide" src="2017 DIRECT TOKS MERCEDES-BENZ GLE350 4MATIC_46.jpg">
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search">
+        <input type="text" id="search" placeholder="Search products">
+        <button onclick="searchProduct()">Search</button>
+    </div>
+
+    <h2 style="text-align:center;">Featured Products</h2>
+
+    <div class="products">
+        <div class="product">
+            <img src="PHONE_NEW.jpg">
+            <h3>Redmi A5 Smart Phone</h3>
+            <p>₦250,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick="addCart('Smart Phone',250000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="laptopnew.jpg">
+            <h3>MacBook Pro Laptop 2020</h3>
+            <p>₦1,050,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick="addCart('MacBook Pro Laptop 2020 M1 Chip, 16GB RAM, 512GB SSD',105000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="2017 DIRECT TOKS MERCEDES-BENZ GLE350 4MATIC_46.jpg">
+            <h3>MERCEDES-BENZ GLE350 4MATIC(2017).</h3>
+            <p>₦46,000,000</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick="addCart('2017 DIRECT TOKS MERCEDES-BENZ GLE350 4MATIC_46',46000000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="PLAY STATION2.jpg">
+            <h3>Sony Ps4 Console 500 GB</h3>
+            <p>₦209,999</p>
+            <div class="rating">
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+                <span onclick="rate()">⭐</span>
+            </div>
+            <button onclick="addCart('Sony Ps4 Console 500 GB',209999)">Add to Cart</button>
+        </div>
+    </div>
+    
+    <!-- CART ITEMS -->
+    <div class="checkout">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+    </div>
+
+    <!-- CHECKOUT -->
+    <div class="checkout">
+        <h3>Checkout</h3>
+        <form>
+            Name<br>
+            <input type="text"><br><br>
+            Email<br>
+            <input type="email"><br><br>
+            Address<br>
+            <input type="text"><br><br>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+<hr>
+      <!-- Footer -->
+<center>
+    <footer>
+        <p>© March 2026 FortuneGlobal E-Hub Website. All rights reserved.</p>
+    </footer>
+</center>
+</body>
+</html>
