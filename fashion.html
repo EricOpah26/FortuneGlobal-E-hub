@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FortuneGlobal E-Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            width: 220px;
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 6px gray;
+        }
+
+        .product img {
+            width: 150px;
+        }
+footer {
+		text-align: center;
+		margin-top: 20px;
+	}
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="electronic.html">Electronic</a>
+        <a href="cars.html">Cars</a>
+        <a href="fashion.html">Fashion</a>
+        <a href="games.html">Games</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <h2 style="text-align:center;">Fashion Products</h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="Miss DG 2025 New Large Capacity Bag.jpg">
+            <h3>Miss DG 2025 New Large Capacity Bag</h3>
+            <p>₦150,000</p>
+            <button onclick="addCart('Miss DG 2025 New Large Capacity Bag', 150000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Large-capacity Tote Bag Chain Letter Decorative Magnetic Buckle Shoulder Bag.jpg">
+            <h3>Large-capacity Tote Bag Chain Letter Decorative Magnetic Buckle Shoulder Bag</h3>
+            <p>₦100,000</p>
+            <button onclick="addCart('Large-capacity Tote Bag Chain Letter Decorative Magnetic Buckle Shoulder Bag', 100000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="MIDIA Ladies' square bag, single-shoulder bag, Women's bag handbag, crossbody bag.jpg">
+            <h3>MIDIA Ladies' square bag, single-shoulder bag, Women's bag handbag, crossbody bag</h3>
+            <p>₦89,500</p>
+            <button onclick="addCart('MIDIA Ladies' square bag, single-shoulder bag, Women's bag handbag, crossbody bag', 89500)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Painting hand bag Cartoon canvas bag Large capacity Tote bag Shopping shoulder bag.jpg">
+            <h3>Painting hand bag Cartoon canvas bag Large capacity Tote bag Shopping shoulder bag</h3>
+            <p>₦100,000</p>
+            <button onclick="addCart('Painting hand bag Cartoon canvas bag Large capacity Tote bag Shopping shoulder bag', 100000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Danami Women Black & Red Contrast Off White Crop Hoodie.jpg">
+            <h3>Danami Women Black & Red Contrast Off White Crop Hoodie</h3>
+            <p>₦40,000</p>
+            <button onclick="addCart('Danami Women Black & Red Contrast Off White Crop Hoodie', 40000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Ladies Vintage Sexy Gown Office Birthday Party Dresses.jpg">
+            <h3Ladies Vintage Sexy Gown Office Birthday Party Dresses</h3>
+            <p>₦25,000</p>
+            <button onclick="addCart('Ladies Vintage Sexy Gown Office Birthday Party Dresses', 25000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="White And Black 2-in-1 Stretch Skinny Jeans Skinny High-Rise Jeans.jpg">
+            <h3>White And Black 2-in-1 Stretch Skinny Jeans Skinny High-Rise Jeans</h3>
+            <p>₦50,000</p>
+            <button onclick="addCart('White And Black 2-in-1 Stretch Skinny Jeans Skinny High-Rise Jeans', 50000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="Danami Grace Fortified Hooded Short Gown- Pink.jpg">
+            <h3>Danami Grace Fortified Hooded Short Gown- Pin</h3>
+            <p>₦10,000</p>
+            <button onclick="addCart('Danami Grace Fortified Hooded Short Gown- Pink', 10000)">Add to Cart</button>
+        </div>
+<div class="product">
+            <img src="SNEAKERS WOMEN3.jpg">
+            <h3>Miss SNEAKERS WOMEN</h3>
+            <p>₦15000</p>
+            <button onclick="addCart('SNEAKERS WOMEN 15000)">Add to Cart</button>
+        </div>
+
+        <div class="product">
+            <img src="SNEAKERS WOMEN2.jpg">
+            <h3>SNEAKERS WOMEN</h3>
+            <p>₦50,000</p>
+            <button onclick="addCart('SNEAKERS WOMEN2', 15000)">Add to Cart</button>
+        </div>
+    
+<div class="product">
+            <img src="SNEAKERS WOMEN1.jpg">
+            <h3>SNEAKERS WOMEN</h3>
+            <p>₦50,000</p>
+            <button onclick="addCart('SNEAKERS WOMEN1', 50000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="SNEAKERS4.jpg">
+            <h3>SNEAKERS</h3>
+            <p>₦12,000</p>
+            <button onclick="addCart('SNEAKERS', 12000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="SNEAKERS3.jpg">
+            <h3>SNEAKER</h3>
+            <p>₦20,000</p>
+            <button onclick="addCart('SNEAKERS', 20000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="SNEAKERS2.jpg">
+            <h3>SNEAKER</h3>
+            <p>₦15000</p>
+            <button onclick="addCart('SNEAKERS', 15000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="4 In 1 Plain Roundneck UNISEX T-Shirts.jpg">
+            <h3>4 In 1 Plain Roundneck UNISEX T-Shirts</h3>
+            <p>₦30,000</p>
+            <button onclick="addCart('4 In 1 Plain Roundneck UNISEX T-Shirts', 30000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="SNEAKERS5.jpg">
+            <h3>SNEAKER</h3>
+            <p>₦30,000</p>
+            <button onclick="addCart('SNEAKER', 30000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="12 Pairs Women's High Jewelry Set Stud Earrings Fashion Diamond Pearls.jpg">
+            <h3>12 Pairs Women's High Jewelry Set Stud Earrings Fashion Diamond Pearls</h3>
+            <p>₦10,000</p>
+            <button onclick="addCart('12 Pairs Women's High Jewelry Set Stud Earrings Fashion Diamond Pearls', 10000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="Wedding Ring Set Diamond For Couple - Black.jpg">
+            <h3>Wedding Ring Set Diamond For Couple - Black</h3>
+            <p>₦9,000</p>
+            <button onclick="addCart(Wedding Ring Set Diamond For Couple - Black', 9000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="Wifinit crystal pendant clavicle necklace with simple design and zircon.jpg">
+            <h3>MWifinit crystal pendant clavicle necklace with simple design and zircon</h3>
+            <p>₦12,000</p>
+            <button onclick="addCart('Miss DG 2025 New Large Capacity Bag', 12000)">Add to Cart</button>
+        </div>
+
+<div class="product">
+            <img src="Miss DG 2025 new style fashionable ladies' handbag.jpg">
+            <h3>Miss DG 2025 New Large Capacity Bag</h3>
+            <p>₦40,000</p>
+            <button onclick="addCart('Miss DG 2025 New Large Capacity Bag', 40000)">Add to Cart</button>
+        </div>
+
+   </center>
+</body>
+</html>
+ </div>
+<hr>
+    
+    <!-- Footer -->
+<center>
+    <footer>
+        <p>© March 2026 FortuneGlobal E-Hub Website. All rights reserved.</p>
+    </footer>
+</center>
+</body>
+</html>
